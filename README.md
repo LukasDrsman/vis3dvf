@@ -15,7 +15,14 @@ pip install pygame PyOpenGl PyOpenGL_accelerate
 ```
 
 ## Quickstart
-A simple example of a time-dependent vector field can be found in the `example.py` file.
+A simple example of a time-dependent vector field can be found in the `example.py` file. To quickstart this example, run:
+```sh
+pip install pygame PyOpenGl PyOpenGL_accelerate
+
+git clone https://github.com/LukasDrsman/vis3dvf.git
+cd vis3dvf
+python3 example.py
+```
 
 ## Usage
 ### *plot*.Figure(window width, window height)
