@@ -1,3 +1,18 @@
+Metadata-Version: 2.1
+Name: vis3dvf
+Version: 1.0.0
+Summary: Derivative of vis3dpy, aimed at visualizing ℝ³ vector fields 
+Home-page: https://github.com/LukasDrsman/vis3dvf
+Author: Lukáš Dršman
+Author-email: lukaskodr@gmail.com
+License: Public Domain
+Platform: UNKNOWN
+Classifier: License :: Public Domain
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 # vis3dvf
 
 <p align="center">
@@ -39,3 +54,5 @@ python3 example.py                                      # runs example.py
    - u = **u**(x,y,z,t) - the x component of the vector field at (x,y,z) and time t (function)
    - v = **v**(x,y,z,t) - the y component of the vector field at (x,y,z) and time t (function)
    - w = **w**(x,y,z,t) - the z component of the vector field at (x,y,z) and time t (function)
+
+

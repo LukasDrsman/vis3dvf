@@ -12,8 +12,8 @@
 """
 
 # necessary imports
-from plot import Figure
-from vectorfield import *
+from vis3dvf.plot import Figure
+from vis3dvf.vectorfield import *
 import numpy as np
 
 # i-th component of the time varying vector field

@@ -1,0 +1,14 @@
+.gitignore
+LICENSE
+README.md
+example.py
+setup.py
+assets/screenshot.png
+vis3dvf/__init__.py
+vis3dvf/plot.py
+vis3dvf/vectorfield.py
+vis3dvf.egg-info/PKG-INFO
+vis3dvf.egg-info/SOURCES.txt
+vis3dvf.egg-info/dependency_links.txt
+vis3dvf.egg-info/requires.txt
+vis3dvf.egg-info/top_level.txt
