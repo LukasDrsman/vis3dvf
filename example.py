@@ -29,7 +29,7 @@ def w(x,y,z,t):
     return 0*x                                   # function must use at leas one of the x,y,z variables
 
 # Figure(window width, window height)
-fig = Figure(800, 800)
+fig = Figure(800, 800, "Vector Field")
 
 # VectorFieldT(u, v, w, vector density, initial time, final time, time delta)
 fig.add(VectorFieldT(u, v, w, 6, 0, 2*np.pi, 0.05))

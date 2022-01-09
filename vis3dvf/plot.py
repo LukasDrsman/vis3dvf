@@ -5,9 +5,10 @@ import OpenGL.GL as gl
 import OpenGL.GLU as glu
 
 class Figure:
-    def __init__(self, width, height):
+    def __init__(self, width, height, pltname="VF plot"):
         self.display = (width, height)
         self.plots = []
+        self.pltname = pltname
 
     def rotate(self, rot = (0.0, 0.0, 0.0)):
         gl.glRotate(rot[0], 1, 0, 0)
@@ -40,6 +41,7 @@ class Figure:
 
     def show(self):
         pg.init()
+        pg.display.set_caption(self.pltname)
         pg.display.set_mode(self.display, pgl.DOUBLEBUF | pgl.OPENGL)
         gl.glOrtho(-1, 1, -1, 1, -100, 100)
 
