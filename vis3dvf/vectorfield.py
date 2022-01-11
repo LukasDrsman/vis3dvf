@@ -3,14 +3,14 @@ import OpenGL.GL as gl
 import OpenGL.GLU as glu
 
 class VectorField:
-    def __init__(self, u, v, w, d):
+    def __init__(self, u, v, w, d, sf):
 
         space = np.linspace(-0.5,0.5,d)
         x, y, z = np.meshgrid(space, space, space)
 
-        self.u = u(x, y, z)
-        self.v = v(x, y, z)
-        self.w = w(x, y, z)
+        self.u = u(x*sf, y*sf, z*sf)
+        self.v = v(x*sf, y*sf, z*sf)
+        self.w = w(x*sf, y*sf, z*sf)
         self.m = np.sqrt(self.u**2 + self.v**2 + self.w**2)
         self.m = self.m / np.max(self.m)
         self.x = x
@@ -39,7 +39,7 @@ class VectorField:
         gl.glEnd()
 
 class VectorFieldT:
-    def __init__(self, u, v, w, d, ti, tf, dt):
+    def __init__(self, u, v, w, d, ti, tf, dt, sf):
 
         space = np.linspace(-0.5,0.5,d)
         x, y, z = np.meshgrid(space, space, space)
@@ -52,13 +52,15 @@ class VectorFieldT:
         self.y = y
         self.z = z
 
+        self.sf = sf
+
         self.t = ti
         self.T = (ti, tf, dt)
 
     def render(self):
-        u = self.u(self.x, self.y, self.z, self.t)
-        v = self.v(self.x, self.y, self.z, self.t)
-        w = self.w(self.x, self.y, self.z, self.t)
+        u = self.u(self.x*self.sf, self.y*self.sf, self.z*self.sf, self.t)
+        v = self.v(self.x*self.sf, self.y*self.sf, self.z*self.sf, self.t)
+        w = self.w(self.x*self.sf, self.y*self.sf, self.z*self.sf, self.t)
         m = np.sqrt(u**2 + v**2 + w**2)
         if np.max(m) != 0:
             m = m / np.max(m)
