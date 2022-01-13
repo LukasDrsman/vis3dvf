@@ -8,14 +8,14 @@ class VectorField:
         space = np.linspace(-0.5,0.5,d)
         x, y, z = np.meshgrid(space, space, space)
 
-        self.u = u(x*sf, y*sf, z*sf)
-        self.v = v(x*sf, y*sf, z*sf)
-        self.w = w(x*sf, y*sf, z*sf)
+        self.v = u(x*sf, y*sf, -z*sf)
+        self.u = v(x*sf, y*sf, -z*sf)
+        self.w = w(x*sf, y*sf, -z*sf)
         self.m = np.sqrt(self.u**2 + self.v**2 + self.w**2)
         self.m = self.m / np.max(self.m)
-        self.x = x
-        self.y = y
-        self.z = z
+        self.x = y
+        self.y = x
+        self.z = -z
 
     def render(self):
         gl.glLineWidth(2.0)
@@ -42,7 +42,8 @@ class VectorFieldT:
     def __init__(self, u, v, w, d, ti, tf, dt, sf):
 
         space = np.linspace(-0.5,0.5,d)
-        x, y, z = np.meshgrid(space, space, space)
+        # x, y, z = np.meshgrid(space, space, space)
+        x, y, z = np.meshgrid(space, space, np.linspace(0,0,d))
 
         self.u = u
         self.v = v
